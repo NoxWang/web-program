@@ -18,7 +18,7 @@ public class ChatServer {
     /** 客户端退出命令 */
     private final String QUIT = "\\quit";
 
-    /** 客户端 Socket */
+    /** 服务端 Socket */
     private ServerSocket serverSocket;
 
     /** 线程池 */
@@ -32,6 +32,7 @@ public class ChatServer {
     private HashMap<Integer, Writer> connectedClient;
 
     public ChatServer(int threadNum) {
+        // 创建线程池
         executorService = Executors.newFixedThreadPool(threadNum);
         connectedClient = new HashMap<>();
     }
@@ -126,6 +127,7 @@ public class ChatServer {
     }
 
     public static void main(String[] args) {
+        // 创建服务器类时传入允许的最大在线用户数
         ChatServer chatServer = new ChatServer(3);
         chatServer.start();
     }
