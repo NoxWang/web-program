@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class UserInputHandler implements Runnable{
 
+    /** 客户端类 */
     private ChatClient chatClient;
 
     public UserInputHandler(ChatClient chatClient) {

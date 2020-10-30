@@ -6,7 +6,11 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class ChatHandler implements Runnable{
+
+    /** 服务器类 */
     private ChatServer server;
+
+    /** 当前客户端 Socket */
     private Socket socket;
 
     public ChatHandler(ChatServer server, Socket socket) {
